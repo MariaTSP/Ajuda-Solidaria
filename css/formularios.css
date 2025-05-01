@@ -1,0 +1,176 @@
+body{
+    font-family: 'Arial';
+    background-image: radial-gradient(circle at center, #EEE8AA, #FFE4B5 );
+
+}
+
+.box{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(4, 52, 16, 0.817);
+    padding: 15px;
+    border-radius: 15px;
+    width: 25%;
+}
+a{
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    display: block; /* necessário para funcionar com margin auto */
+    width: fit-content; /* opcional, para evitar ocupar toda a linha */
+    margin: auto;
+}
+
+fieldset{
+    border: 3px solid #736a089d;
+}
+
+legend{
+    border: 1px solid #736a089d;
+    padding: 10px;
+    text-align: center;
+    background-color: #736a089d;
+    border-radius: 8px;
+}
+
+.inputBox{
+    position: relative;
+}
+
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.labelInput{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.inputUser:focus ~ .labelInput, .inputUser:valid ~ .labelInput{
+    top: -20px;
+    font-size: 12px;
+    color: rgb(4, 165, 4);
+}
+
+#data-evento{
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 13px;
+}
+
+.select-container{
+    display: flex;
+    justify-content: left;
+    position: relative;
+    min-width: 250px;
+    height: 25px;
+}
+
+.select-box{
+    border: none;
+
+    padding: 0 15px 0 15px;
+    color: white;
+    background-color: rgba(4, 52, 16, 0.562);
+    font-size: 15px;
+}
+
+#submit{
+    background-image: linear-gradient(rgba(4, 52, 16, 0.562),#736a089d);
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+#submit:hover{
+    background-color: rgba(7, 87, 7, 0.577);
+}
+.inputFile{
+    position: relative;
+    border: 2px solid #736a089d;
+    padding: 10px;
+    margin-right: 75%;
+    border-radius: 8px;
+    transition: all 0.3s;
+    width: 100px;
+
+}
+.inputFile:hover{
+    border-color: #736a08;
+    background-color: rgba(7, 43, 7, 0.618);
+
+}
+.button{
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+}
+.btn-excluir {
+    padding: 10px 15px;
+    background-color: rgba(226, 66, 66, 0.825);
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-excluir:hover {
+    background-color: darkred;
+    transform: translateY(-5px);
+    box-shadow: -5px 8px 10px gray;
+}
+
+.btn-edit {
+    padding: 10px 15px;
+    background-color: rgba(13, 72, 250, 0.681);
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-edit:hover{
+    background-color: rgb(13, 72, 250);
+    transform: translateY(-5px);
+    box-shadow: -5px 8px 10px gray;
+
+}
+
+.botoes-container {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 50px;
+}
+.info-cont{
+    color: black;
+    border: solid rgba(0, 0, 0, 0.71);
+    box-shadow: 0px 1px 5px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    margin-top: 8px;
+}
