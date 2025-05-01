@@ -1,3 +1,52 @@
+<?php
+    session_start();
+
+    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
+    {
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);        
+        header('Location: ../login/formulario-login.php');
+    }
+    $logado = $_SESSION['email'];
+    $id_usuario = $_SESSION['id'];
+
+    if(isset($_POST['submit']))
+    {
+        include_once('../config.php');
+
+        $nome = $_POST['nome'];
+        $descricao = $_POST['descricao'];
+        $quantidade = $_POST['quantidade'];
+        $estado = $_POST['estado'];
+        $pasta = "../uploads/";
+
+        $caminho_imagem = $pasta . "sem-foto.png"; // imagem padrão
+
+    if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
+        $nome_foto = $_FILES['foto']['name'];
+        $extensao = strtolower(pathinfo($nome_foto, PATHINFO_EXTENSION));
+        $novoNomeFoto = uniqid() . "." . $extensao;
+        $path = $pasta . $novoNomeFoto;
+
+        if ($_FILES['foto']['size'] <= 2097152 && ($extensao == "jpg" || $extensao == "png")) {
+            if (move_uploaded_file($_FILES['foto']['tmp_name'], $path)) {
+                $caminho_imagem = $path;
+            }
+        }
+    }
+
+    $query = "INSERT INTO itens (nome, descricao, quantidade, caminho_imagem, estado, id_usuario)
+              VALUES ('$nome', '$descricao', '$quantidade', '$caminho_imagem', '$estado', '$id_usuario')";
+
+    $result = mysqli_query($conexao, $query);
+
+    if ($result) {
+        echo "Item cadastrado com sucesso!";
+    } else {
+        echo "Erro ao cadastrar item.";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
