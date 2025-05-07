@@ -13,9 +13,9 @@
 
     if(isset($_POST['submit']))
     {
-        print_r('Texto: ' . $_POST['texto']);
-        print_r('<br>');
-        print_r('Estado: ' . $_POST['estado']);
+        //print_r('Texto: ' . $_POST['texto']);
+        //print_r('<br>');
+        //print_r('Estado: ' . $_POST['estado']);
 
         $texto = $_POST['texto'];
         $estado = $_POST['estado'];
@@ -47,7 +47,7 @@
     <div class="inputBox">
         <label for="texto">Digite sua necessidade:</label>
         <br>
-        <textarea class="inputUser" name="texto" rows="10" placeholder="digite sua necessidade" wrap="soft"></textarea>
+        <textarea class="inputUser" name="texto" rows="10" placeholder="digite sua necessidade" wrap="soft" required></textarea>
         <br><br>
         <div class="select-container">
         <select name="estado" id="estado" class="select-box">

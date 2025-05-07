@@ -43,7 +43,7 @@
 <?php
 session_start();
 
-if ((!isset($_SESSION['email'])) || (!isset($_SESSION['senha']))) {
+if ((!isset($_SESSION['email']))) {
     unset($_SESSION['email']);
     unset($_SESSION['senha']);
     header('Location: ../login/formulario-login.php');
