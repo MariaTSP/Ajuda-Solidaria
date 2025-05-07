@@ -5,34 +5,49 @@
     {
         include_once('../config.php');
         $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $tipo = $usuario['tipo'];
+        $senha_digitada = $_POST['senha']; // Renomeei para deixar claro
 
         //print_r('Email: ' . $email);
-        //print_r('Senha: ' . $senha);
+        //print_r('Senha: ' . $senha_digitada);
 
-        $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
-
+        // Busca o usuário no banco de dados pelo email
+        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
         $result = $conexao->query($sql);
-        //print_r($result);
-        if(mysqli_num_rows($result) < 1)
+
+        if(mysqli_num_rows($result) == 1)
         {
-            unset($_SESSION['email']);
-            unset($_SESSION['senha']);
-            echo "<script>
-            alert('Usuário não encontrado');
-            window.location.href = 'formulario-login.php';
-            </script>";
+            $usuario = mysqli_fetch_assoc($result);
+
+            // Verifica se a senha digitada corresponde ao hash armazenado
+            if(password_verify($senha_digitada, $usuario['senha']))
+            {
+                // Senha correta, inicia a sessão
+                $_SESSION['id'] = $usuario['id'];
+                $_SESSION['email'] = $email;
+                $_SESSION['tipo'] = $usuario['tipo'];
+
+                header('Location: ../index.php');  
+            }
+            else
+            {
+               
+                unset($_SESSION['email']);
+                unset($_SESSION['senha']);
+                echo "<script>
+                alert('Senha incorreta!');
+                window.location.href = 'formulario-login.php';
+                </script>";
+            }
         }
         else
         {
-            $usuario = mysqli_fetch_assoc($result);
-            $_SESSION['id'] = $usuario['id'];
-            $_SESSION['email'] = $email;
-            $_SESSION['senha'] = $senha;
-            $_SESSION['tipo'] = $usuario['tipo'];  // Agora a sessão irá ter o tipo do usuário (beneficiário, organização, doador)
-    
-            header('Location: ../index.php');  // Redireciona para a página inicial após o login
+            
+            unset($_SESSION['email']);
+            unset($_SESSION['senha']);
+            echo "<script>
+            alert('Usuário não encontrado!');
+            window.location.href = 'formulario-login.php';
+            </script>";
         }
     }
     else{

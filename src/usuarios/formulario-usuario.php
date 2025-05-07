@@ -21,9 +21,10 @@
         $endereco = $_POST['endereco'];
         $senha = $_POST['senha'];
         $tipo = $_POST['tipo'];
+        $criptografada = password_hash($senha, PASSWORD_DEFAULT);
 
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,telefone,email,endereco,senha,tipo)
-        VALUES ('$nome', '$telefone', '$email', '$endereco', '$senha', '$tipo')");
+        VALUES ('$nome', '$telefone', '$email', '$endereco', '$criptografada', '$tipo')");
 
         header('Location: ../login/formulario-login.php');
     }
