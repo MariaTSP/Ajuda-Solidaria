@@ -186,8 +186,8 @@ if($resultEventos->num_rows > 0)
     <div class="main-content">
         <a href="eventos/eventos.php" class="botao-centralizado">Ver Todos os Eventos</a>
         </div>
+        <a href="estatisticas/estatisticas.php" class="btn-estatistica">Estatísticas</a>
     </main>
-
 
     <script>
         const navbar = document.querySelector(".navbar");
