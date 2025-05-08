@@ -39,7 +39,7 @@
     </style>
 </head>
 <body>
-    <button><a href="../index.php">Voltar</a></button>
+    <button><a href="../index.php" class="btn-voltar">Voltar</a></button>
 <?php
 session_start();
 

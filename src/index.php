@@ -92,7 +92,10 @@ if($resultEventos->num_rows > 0)
                     <button><a href="itens/formulario-item.php">Fazer uma Doação</a></button>
                 </div>
                 <div class="header-bottom-side-right">
+                    <figure>
                     <img src="img/people-holding-rubber-heart.jpg">
+                    <figcaption style="text-align: right;">Designed By <a href="https://www.freepik.com/free-photo/people-holding-rubber-heart_5598505.htm" target="_blank" style="  text-decoration: none; color: #2471a3">Freepik</a></figcaption>
+                    </figure>
                 </div>
             </div>
         </div>

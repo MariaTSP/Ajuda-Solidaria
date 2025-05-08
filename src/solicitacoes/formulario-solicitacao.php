@@ -27,6 +27,9 @@
 
         $result = mysqli_query($conexao, "INSERT INTO solicitacoes(descricao, estado, id_usuario, data_hora)
         VALUES ('$texto', '$estado', '$id_usuario',NOW())");
+
+        header('Location: ../index.php');
+        exit;
     }
 
 ?>
@@ -56,7 +59,7 @@
         </select>
     </div>
         <br>
-        <input type="submit" name="submit" id="submit">
+        <input type="submit" name="submit" class="btn-submit">
     </div>
     <a href="../index.php">Voltar</a>
 

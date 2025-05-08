@@ -21,7 +21,7 @@
                     <label for="senha" class="labelInput">Digite sua senha:</label>
                 </div>
                 <br><br>
-                <input type="submit" name="submit" id="submit" value="Enviar">
+                <input type="submit" name="submit" class="btn-submit" value="Enviar">
                 <br>
                 <a href="../tela-principal.php">Voltar</a>
             </fieldset>

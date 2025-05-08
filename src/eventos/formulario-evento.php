@@ -4,11 +4,10 @@
 
     if(
     !isset($_SESSION['email']) ||
-    !isset($_SESSION['senha']) ||
     $_SESSION['tipo'] !== 'organizacao')
     {     
         header('Location: ../index.php?error=true');
-        
+        exit;
     }
     $logado = $_SESSION['email'];
     $id_usuario = $_SESSION['id'];
@@ -33,6 +32,9 @@
 
         $result = mysqli_query($conexao, "INSERT INTO eventos(nome, data, endereco, descricao, id_organizacao)
         VALUES ('$nome', '$data_evento', '$endereco', '$descricao_evento', '$id_usuario')");
+
+        header('Location: ../index.php');
+        exit;
     }
 ?>
 <!DOCTYPE html>
@@ -70,9 +72,8 @@
             <textarea class="inputUser" name="descricao-evento" rows="10" placeholder="Descreva o evento" wrap="soft"></textarea>
         </div>
         <br>
-        <input type="submit" name="submit" id="submit">
+        <input type="submit" name="submit" class="btn-submit">
         <a href="../index.php">Voltar</a>
-
         </fieldset>
         </form>
         </div>    

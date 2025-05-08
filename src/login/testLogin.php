@@ -5,7 +5,8 @@
     {
         include_once('../config.php');
         $email = $_POST['email'];
-        $senha_digitada = $_POST['senha']; // Renomeei para deixar claro
+        $senha_digitada = $_POST['senha'];
+        $tipo = $_POST['tipo']; 
 
         //print_r('Email: ' . $email);
         //print_r('Senha: ' . $senha_digitada);

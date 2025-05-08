@@ -77,7 +77,7 @@
     </div>
     <br>
     <br>
-    <input type="submit" name="submit" id="submit">
+    <input type="submit" name="submit" class="btn-submit">
     <br>
     <a href="../tela-principal.php">Voltar</a>
     </fieldset>

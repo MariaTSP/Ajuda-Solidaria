@@ -1,4 +1,5 @@
 body{
+
     font-family: 'Arial';
     background-image: radial-gradient(circle at center, #EEE8AA, #FFE4B5 );
 
@@ -91,7 +92,7 @@ legend{
     font-size: 15px;
 }
 
-#submit{
+.btn-submit{
     background-image: linear-gradient(rgba(4, 52, 16, 0.562),#736a089d);
     width: 100%;
     border: none;
@@ -102,7 +103,7 @@ legend{
     cursor: pointer;
     transition: all 0.5s;
 }
-#submit:hover{
+.btn-submit:hover{
     background-color: rgba(7, 87, 7, 0.577);
 }
 .inputFile{
@@ -125,6 +126,24 @@ legend{
     position: absolute;
     inset: 0;
     cursor: pointer;
+}
+.btn-voltar{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: rgba(4, 52, 16, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: rgba(7, 87, 7, 0.9);
+    transform: translateY(-2px);
 }
 .btn-excluir {
     padding: 10px 15px;
@@ -166,6 +185,7 @@ legend{
     gap: 10px;
     min-height: 50px;
 }
+
 .info-cont{
     color: black;
     border: solid rgba(0, 0, 0, 0.71);
@@ -174,3 +194,35 @@ legend{
     background-color: aliceblue;
     margin-top: 8px;
 }
+
+@media (max-width: 800px) {
+  .box {
+    position: static;
+    transform: none;
+    width: 90%;
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 20px;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  .inputUser {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  #submit {
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  a {
+    font-size: 1em;
+    margin-top: 10px;
+  }
+}
+
+  

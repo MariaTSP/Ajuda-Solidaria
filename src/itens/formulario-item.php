@@ -45,6 +45,9 @@
     } else {
         echo "Erro ao cadastrar item.";
     }
+
+    header('Location: ../index.php');
+    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -100,7 +103,7 @@
         </select>
     </div>
     <br><br>
-    <input type="submit" name="submit" id="submit">
+    <input type="submit" name="submit" class="btn-submit">
     <a href="../index.php">Voltar</a>
     </fieldset>
        
