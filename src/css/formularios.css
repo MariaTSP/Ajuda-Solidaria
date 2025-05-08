@@ -194,7 +194,21 @@ legend{
     background-color: aliceblue;
     margin-top: 8px;
 }
-
+.termos-container {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: white;
+}
+  
+  .termos-container a {
+    color: #1bd2d2;
+    text-decoration: underline;
+}
+.termos-container label {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 @media (max-width: 800px) {
   .box {
     position: static;

@@ -75,6 +75,13 @@
             <option value="doador">Doador</option>
         </select>
     </div>
+    <div class="termos-container">
+    <input type="checkbox" id="termos" required>
+    <label for="termos">Eu li e concordo com os<a href="../info/termos.html">Termos e Condições.</a></label>
+    <br>
+    <input type="checkbox" id="termos" required>
+    <label for="termos">Eu li e concordo com a<a href="../info/pp.html">Política de Privacidade.</a></label>
+    </div>
     <br>
     <br>
     <input type="submit" name="submit" class="btn-submit">
