@@ -106,9 +106,9 @@ if($resultEventos->num_rows > 0)
         <div class="phrases-background">
             <div class="page-inner-content">
                 <div class="cols cols-3">
-                    <img src="ajeita-depois.png">
-                    <img src="ajeita-depois.png">
-                    <img src="ajeita-depois.png">
+                    <img src="img/img1.png">
+                    <img src="img/img2.png">
+                    <img src="img/img3.png">
                 </div>
             </div>
         </div>
